@@ -2,14 +2,18 @@ version: "3.6"
 services:
   dlna_movies:
     image: sego/minidlna-armhf:stable
-    net: pub-net
+    net: pubnet
     volumes: 
       - /mnt/storage1/Media/Movies:/media:ro
   dlna_photos:
     image: sego/minidlna-armhf:stable
-    net: pub-net
+    net: pubnet
     volumes: 
       - /mnt/storage1/Media/Photos:/media:ro
- networks:
-   pub-net:
-     driver: macvlan
+networks:
+  pubnet:
+    subnet: 192.168.1.0/24
+    gateway: 192.168.1.1
+    parent: eth0
+    driver: macvlan
+    
