@@ -9,6 +9,7 @@ services:
     environment: 
       - MINIDLNA_media_dir=V,/media
       - MINIDLNA_FRIENDLY_NAME="NAS Фильмы"
+    restart: always
   dlna-photos:
     image: sego/minidlna-armhf:stable
     networks: 
@@ -18,6 +19,7 @@ services:
     environment: 
       - MINIDLNA_media_dir=V,/media
       - MINIDLNA_FRIENDLY_NAME="NAS Фото"
+    restart: always
 networks:
   pubnet:
     driver: macvlan
