@@ -2,7 +2,8 @@ version: "3.6"
 services:
   dlna-movies:
     image: sego/minidlna-armhf:stable
-    net: pubnet
+    networks: 
+      - pubnet
     volumes: 
       - /mnt/storage1/Media/Movies:/media:ro
     environment: 
@@ -10,7 +11,8 @@ services:
       - MINIDLNA_FRIENDLY_NAME="NAS Фильмы"
   dlna-photos:
     image: sego/minidlna-armhf:stable
-    net: pubnet
+    networks: 
+      - pubnet
     volumes: 
       - /mnt/storage1/Media/Photos:/media:ro
     environment: 
@@ -22,9 +24,5 @@ networks:
     driver_opts:
       parent: eth0
     ipam:
-      driver: pubnet
       config:
-        subnet:  10.103.0.1/16
-        gateway: 172.28.5.254
-    
-    
+        - subnet: 192.168.1.0/24
