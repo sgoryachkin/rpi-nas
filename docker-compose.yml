@@ -12,7 +12,7 @@ services:
         read_only: true
     environment: 
       - MINIDLNA_media_dir=V,/media
-      - MINIDLNA_FRIENDLY_NAME="NAS Фильмы"
+      - MINIDLNA_friendly_name="NAS Фильмы"
     restart: always
   dlna-photos:
     image: sego/minidlna-armhf:stable
@@ -26,7 +26,7 @@ services:
         read_only: true
     environment: 
       - MINIDLNA_media_dir=PV,/media
-      - MINIDLNA_FRIENDLY_NAME="NAS Фото"
+      - MINIDLNA_friendly_name="NAS Фото"
     restart: always
 networks:
   pubnet:
