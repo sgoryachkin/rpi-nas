@@ -28,6 +28,12 @@ services:
       - MINIDLNA_media_dir=PV,/media
       - MINIDLNA_friendly_name="NAS Фото"
     restart: always
+  torrent:
+    image: sego/transmission-armhf:latest
+    restart: always
+    networks: 
+      pubnet:
+        ipv4_address: 192.168.1.203
 networks:
   pubnet:
     driver: macvlan
