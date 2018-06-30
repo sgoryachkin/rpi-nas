@@ -7,7 +7,7 @@ services:
         ipv4_address: 192.168.1.201
     volumes: 
       - type: bind
-        source: /mnt/storage1/Media/Movies
+        source: ${STORAGE1_DIR}/Media/Movies
         target: /media
         read_only: true
     environment: 
