@@ -1,5 +1,15 @@
-version: "3.3"
-  services:
-networks:
-  default:
-    driver: macvlan
+version: "3.6" 
+services:
+  dlna_movies:
+    image: sego/minidlna-armhf:stable
+    net: pub-net
+    volumes: 
+      - /mnt/storage1/Media/Movies:/media:ro
+  dlna_photos:
+    image: sego/minidlna-armhf:stable
+    net: pub-net
+    volumes: 
+      - /mnt/storage1/Media/Photos:/media:ro
+ networks:
+   pub-net:
+     driver: macvlan
