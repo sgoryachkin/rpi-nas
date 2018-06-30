@@ -3,7 +3,8 @@ services:
   dlna-movies:
     image: sego/minidlna-armhf:stable
     networks: 
-      - pubnet
+      pubnet:
+        ipv4_address: 192.168.1.201
     volumes: 
       - type: bind
         source: /mnt/storage1/Media/Movies
@@ -16,7 +17,8 @@ services:
   dlna-photos:
     image: sego/minidlna-armhf:stable
     networks: 
-      - pubnet
+      pubnet:
+        ipv4_address: 192.168.1.202
     volumes: 
       - type: bind
         source: /mnt/storage1/Media/Photos
