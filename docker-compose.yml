@@ -1,19 +1,26 @@
 version: "3.6" 
 services:
-  dlna_movies:
+  dlna-movies:
     image: sego/minidlna-armhf:stable
     net: pubnet
     volumes: 
       - /mnt/storage1/Media/Movies:/media:ro
-  dlna_photos:
+    environment: 
+      - MINIDLNA_media_dir=V,/media
+      - MINIDLNA_FRIENDLY_NAME="NAS Фильмы"
+  dlna-photos:
     image: sego/minidlna-armhf:stable
     net: pubnet
     volumes: 
       - /mnt/storage1/Media/Photos:/media:ro
+    environment: 
+      - MINIDLNA_media_dir=V,/media
+      - MINIDLNA_FRIENDLY_NAME="NAS Фото"
 networks:
   pubnet:
     subnet: 192.168.1.0/24
     gateway: 192.168.1.1
-    parent: eth0
+    options: 
+      - parent=eth0
     driver: macvlan
     
