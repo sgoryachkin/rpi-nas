@@ -18,11 +18,13 @@ services:
       - MINIDLNA_FRIENDLY_NAME="NAS Фото"
 networks:
   pubnet:
-    options: 
-      - parent=eth0
     driver: macvlan
-    config:
-      - subnet: 10.103.0.1/16
-      - gateway: 192.168.1.1
+    driver_opts:
+      parent: eth0
+    ipam:
+      driver: pubnet
+      config:
+        subnet:  10.103.0.1/16
+        gateway: 172.28.5.254
     
     
