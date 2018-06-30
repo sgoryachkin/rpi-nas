@@ -5,7 +5,10 @@ services:
     networks: 
       - pubnet
     volumes: 
-      - /mnt/storage1/Media/Movies:/media:ro
+      - type: bind
+        source: /mnt/storage1/Media/Movies
+        target: /media
+        read_only: true
     environment: 
       - MINIDLNA_media_dir=V,/media
       - MINIDLNA_FRIENDLY_NAME="NAS Фильмы"
@@ -15,7 +18,10 @@ services:
     networks: 
       - pubnet
     volumes: 
-      - /mnt/storage1/Media/Photos:/media:ro
+      - type: bind
+        source: /mnt/storage1/Media/Photos
+        target: /media
+        read_only: true
     environment: 
       - MINIDLNA_media_dir=V,/media
       - MINIDLNA_FRIENDLY_NAME="NAS Фото"
