@@ -23,7 +23,7 @@ services:
         target: /media
         read_only: true
     environment: 
-      - MINIDLNA_media_dir=V,/media
+      - MINIDLNA_media_dir=PV,/media
       - MINIDLNA_FRIENDLY_NAME="NAS Фото"
     restart: always
 networks:
