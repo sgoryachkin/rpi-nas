@@ -1,7 +1,7 @@
 version: "3.6" 
 services:
   dlna-movies:
-    image: sego/minidlna-armhf:stable
+    image: sego/minidlna-armhf:latest
     networks: 
       pubnet:
         ipv4_address: 192.168.1.201
@@ -15,7 +15,7 @@ services:
       - MINIDLNA_friendly_name="NAS Фильмы"
     restart: always
   dlna-photos:
-    image: sego/minidlna-armhf:stable
+    image: sego/minidlna-armhf:latest
     networks: 
       pubnet:
         ipv4_address: 192.168.1.202
@@ -34,7 +34,6 @@ services:
     networks: 
       pubnet:
         ipv4_address: 192.168.1.203
-    user: ubuntu
 networks:
   pubnet:
     driver: macvlan

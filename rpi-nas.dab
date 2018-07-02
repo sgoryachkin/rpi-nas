@@ -1,0 +1,31 @@
+{
+  "Services": {
+    "dlna-movies": {
+      "Env": [
+        "MINIDLNA_friendly_name=\"NAS \u0424\u0438\u043b\u044c\u043c\u044b\"", 
+        "MINIDLNA_media_dir=V,/media"
+      ], 
+      "Image": "sego/minidlna-armhf@sha256:c16c7afe09164ccdcca882a2db673757deadf5f908d9711a65d6b280a89eb2ea", 
+      "Networks": [
+        "pubnet"
+      ]
+    }, 
+    "dlna-photos": {
+      "Env": [
+        "MINIDLNA_friendly_name=\"NAS \u0424\u043e\u0442\u043e\"", 
+        "MINIDLNA_media_dir=PV,/media"
+      ], 
+      "Image": "sego/minidlna-armhf@sha256:c16c7afe09164ccdcca882a2db673757deadf5f908d9711a65d6b280a89eb2ea", 
+      "Networks": [
+        "pubnet"
+      ]
+    }, 
+    "torrent": {
+      "Image": "sego/transmission-armhf@sha256:572d41311f2e79e0d3bb34ec8c832c3b02f02ef3ab3ee120e512d465ad943b3f", 
+      "Networks": [
+        "pubnet"
+      ]
+    }
+  }, 
+  "Version": "0.1"
+}
