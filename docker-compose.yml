@@ -29,11 +29,25 @@ services:
       - MINIDLNA_friendly_name=Фото
     restart: always
   torrent:
-    image: sego/transmission-armhf:latest
-    restart: always
+    image: lsioarmhf/transmission:latest
+    volumes: 
+      - type: bind
+        source: ${MOVIES_DIR}
+        target: /downloads
+        read_only: false
+      - type: bind
+        source: ${SYS_DIR}/transmission-daemon
+        target: /config
+        read_only: false
+    environment: 
+      - PUID=1000
+      - PGID=1000
+      - TRUSER=transmission
+      - TRPASSWD=transmission
     networks: 
       pubnet:
         ipv4_address: 192.168.1.203
+    restart: always
 networks:
   pubnet:
     driver: macvlan
