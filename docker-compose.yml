@@ -42,11 +42,11 @@ services:
     environment: 
       - PUID=1000
       - PGID=1000
-      - TRUSER=transmission
-      - TRPASSWD=transmission
-    networks: 
-      pubnet:
-        ipv4_address: 192.168.1.203
+    ports:
+      - 9091:9091
+#    networks: 
+#      pubnet:
+#        ipv4_address: 192.168.1.203
     restart: always
 networks:
   pubnet:
