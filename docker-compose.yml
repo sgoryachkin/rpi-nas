@@ -28,7 +28,7 @@ services:
       - MINIDLNA_media_dir=PV,/media
       - MINIDLNA_friendly_name=Фото
     restart: always
-  torrent:
+  bittorrent:
     image: lsioarmhf/transmission:latest
     volumes: 
       - type: bind
