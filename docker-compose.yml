@@ -1,8 +1,7 @@
 version: "3.6" 
 services:
   dlna-movies:
-    privileged: true
-    image: sego/minidlna-armhf
+    image: sego/minidlna-armhf:test
     networks: 
       pubnet:
         ipv4_address: 192.168.1.201
@@ -16,8 +15,7 @@ services:
       - MINIDLNA_friendly_name=Фильмы
     restart: always
   dlna-photos:
-    privileged: true
-    image: sego/minidlna-armhf
+    image: sego/minidlna-armhf:test
     networks:
       pubnet:
         ipv4_address: 192.168.1.202
