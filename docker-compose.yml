@@ -10,6 +10,10 @@ services:
         source: ${MOVIES_DIR}
         target: /media
         read_only: true
+        volumes: 
+      - type: bind
+        source: ${SYSD_DIR/dlna-movies-db}
+        target: /db
     environment: 
       - MINIDLNA_media_dir=V,/media
       - MINIDLNA_friendly_name=Фильмы
@@ -24,6 +28,9 @@ services:
         source: ${PHOTOS_DIR}
         target: /media
         read_only: true
+      - type: bind
+        source: ${SYSD_DIR/dlna-photos-db}
+        target: /db
     environment: 
       - MINIDLNA_media_dir=PV,/media
       - MINIDLNA_friendly_name=Фото
