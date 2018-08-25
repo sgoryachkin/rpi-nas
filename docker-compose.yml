@@ -12,7 +12,7 @@ services:
         read_only: true
         volumes: 
       - type: bind
-        source: ${SYS_DIR/dlna-movies-db}
+        source: ${SYS_DIR}/dlna-movies-db
         target: /db
     environment: 
       - MINIDLNA_media_dir=V,/media
@@ -29,7 +29,7 @@ services:
         target: /media
         read_only: true
       - type: bind
-        source: ${SYS_DIR/dlna-photos-db}
+        source: ${SYS_DIR}/dlna-photos-db
         target: /db
     environment: 
       - MINIDLNA_media_dir=PV,/media
