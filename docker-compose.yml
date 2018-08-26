@@ -10,7 +10,6 @@ services:
         source: ${MOVIES_DIR}
         target: /media
         read_only: true
-        volumes: 
       - type: bind
         source: ${SYS_DIR}/dlna-movies-db
         target: /db
