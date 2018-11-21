@@ -60,6 +60,11 @@ services:
     restart: always
   nginx:
     image: arm32v7/nginx:1.15
+    volumes:
+      - type: bind
+        source: ./nginx.conf
+        target: /etc/nginx/nginx.conf
+        read_only: true
     networks: 
       pubnet:
         ipv4_address: 192.168.1.210
