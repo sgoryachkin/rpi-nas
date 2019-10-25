@@ -78,6 +78,9 @@ networks:
     driver: macvlan
     driver_opts:
       parent: eth0
+      aux_addreses:  "host=192.168.1.33"
     ipam:
       config:
         - subnet: 192.168.1.0/24
+#          aux_addreses:
+#            host: 192.168.1.22
